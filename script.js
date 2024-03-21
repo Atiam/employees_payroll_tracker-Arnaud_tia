@@ -12,19 +12,21 @@ const collectEmployees = function() {
 
   while(addEmployee) {
     let employeesInfo = {
-        FirstName: ``,
-        LastName: ``,
-        Salary: 0
+        firstName: ``,
+        lastName: ``,
+        salary: 0
     }
     //2-Prompt the user to enter employee details. 
-    employeesInfo.FirstName = prompt("Enter employee's First Name:").toLocaleLowerCase();
-    employeesInfo.LastName = prompt("Enter employee's Last Name:").toLocaleLowerCase();
-    employeesInfo.Salary = prompt("Enter employee's Salary:");
+    employeesInfo.firstName = prompt("Enter employee's First Name:").toLocaleLowerCase();
+    employeesInfo.lastName = prompt("Enter employee's Last Name:").toLocaleLowerCase();
+    employeesInfo.salary = prompt("Enter employee's Salary:");
     //To convert the user entre into number.
-    employeesInfo.Salary = parseInt(employeesInfo.Salary);
+    employeesInfo.salary = parseInt(employeesInfo.salary);
 
-    if (isNaN(employeesInfo.Salary)) {
-      employeesInfo.Salary = 0;
+    //This method will check if the Salary is not a number. If if the case (Salary not a number), it will set he salary to the defaulf value, with is 0.
+
+    if (isNaN(employeesInfo.salary)) {
+      employeesInfo.salary = 0;
     }
 
 
@@ -46,7 +48,7 @@ const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
     let TotalSalary = 0
     for (let i = 0; i < employeesArray.length; i++) {
-      TotalSalary += employeesArray[i].Salary;  
+      TotalSalary += employeesArray[i].salary;  
    }
    const average = TotalSalary / employeesArray.length;
    console.log("The verage Salary is:" + average);
@@ -57,7 +59,10 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+  const Randoemployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
+  console.log("Random employee is: " + Randoemployee.firstName);
 }
+
 
 /*
   ====================
