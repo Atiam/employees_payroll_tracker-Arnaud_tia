@@ -7,7 +7,7 @@ const collectEmployees = function() {
 
   //1-Define an empty object to store employee details. 
   
-  let employeesArray = [];
+  let employeesList = [];
   let addEmployee = true;
 
   while(addEmployee) {
@@ -28,15 +28,15 @@ const collectEmployees = function() {
     }
 
 
-    //To push/add user entry into the employeesArray array.
+    //To push/add user entry into the employeesList array.
 
-    employeesArray.push(employeesInfo);
+    employeesList.push(employeesInfo);
 
     addEmployee = confirm(`Click ok to continue or cancel when you are done.`)
     
   }
 
-  return employeesArray;
+  return employeesList;
   
 }
 
