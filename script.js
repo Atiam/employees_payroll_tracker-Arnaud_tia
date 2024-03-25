@@ -17,17 +17,17 @@ const collectEmployees = function () {
       salary: 0,
     };
     //2-Prompt the user to enter employee details.
+    //parseFloat will convert the salary entry to a number.
     employeesInfo.firstName = prompt("Enter employee's First Name:").toLocaleLowerCase();
     employeesInfo.lastName = prompt("Enter employee's Last Name:").toLocaleLowerCase();
     employeesInfo.salary = parseFloat(prompt("Enter employee's Salary:"));
 
-    //This method will check if the Salary is not a number. If if the case (Salary not a number), it will set he salary to the defaulf value, which will be 0.
-
+    //3- This method will check if the Salary is not a number. If if the case (Salary not a number), it will set he salary to the defaulf value, which will be 0.
     if (isNaN(employeesInfo.salary)) {
       employeesInfo.salary = 0;
     }
 
-    //To push/add user entry into the employeesList array.
+    //4- To push/add user entry into the employeesList array.
 
     employeesList.push(employeesInfo);
 
